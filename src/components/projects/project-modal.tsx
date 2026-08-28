@@ -29,12 +29,12 @@ export function ProjectModal({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-h-[88vh] w-full max-w-3xl overflow-y-auto p-0 sm:max-w-3xl">
+      <DialogContent className="flex max-h-[88vh] w-full max-w-3xl flex-col gap-0 overflow-y-auto p-0 sm:max-w-3xl">
         <ImagePlaceholder
           src={project.thumbnail || undefined}
           alt={project.title}
           label="Project hero image"
-          className="aspect-[21/9] w-full rounded-t-xl"
+          className="aspect-[21/9] w-full shrink-0 rounded-t-xl"
         />
 
         <div className="p-6 sm:p-8">

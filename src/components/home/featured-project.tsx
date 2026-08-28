@@ -28,6 +28,7 @@ export function FeaturedProject() {
             className="group mt-10 grid grid-cols-1 items-center gap-8 rounded-3xl border border-border bg-card p-4 transition-colors hover:border-foreground/20 md:grid-cols-2 md:gap-10 md:p-6"
           >
             <ImagePlaceholder
+              src={project.thumbnail || undefined}
               alt={project.title}
               label="Project hero image, replace via thumbnail in data/projects.ts"
               className="aspect-[4/3] w-full rounded-2xl"
