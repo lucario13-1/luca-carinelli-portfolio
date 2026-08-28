@@ -29,7 +29,7 @@ export const site = {
 
   // Social + external links. Set a value to "" to hide that link from the UI.
   links: {
-    linkedin: "https://www.linkedin.com/in/lucacarinelli",
+    linkedin: "https://www.linkedin.com/in/luca-carinelli-9b8996232/",
     github: "https://github.com/lucacarinelli",
     email: "mailto:carinelliluca@gmail.com",
   },
