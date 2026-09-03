@@ -2,20 +2,11 @@
 
 import * as React from "react";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
-import {
-  getOrderedProjects,
-  getProjectCategories,
-  getProjectBySlug,
-  type Project,
-  type ProjectCategory,
-} from "@/data/projects";
+import { getOrderedProjects, getProjectBySlug, type Project } from "@/data/projects";
 import { ProjectCard } from "@/components/projects/project-card";
 import { ProjectModal } from "@/components/projects/project-modal";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 
 const allProjects = getOrderedProjects();
-const categories: ("All" | ProjectCategory)[] = ["All", ...getProjectCategories()];
 
 export function ProjectGallery() {
   const searchParams = useSearchParams();
@@ -31,14 +22,8 @@ export function ProjectGallery() {
     return slug ? getProjectBySlug(slug) ?? null : null;
   }, [searchParams]);
 
-  const [activeCategory, setActiveCategory] = React.useState<"All" | ProjectCategory>("All");
   const [selected, setSelected] = React.useState<Project | null>(initialProject);
   const [open, setOpen] = React.useState(Boolean(initialProject));
-
-  const filtered =
-    activeCategory === "All"
-      ? allProjects
-      : allProjects.filter((p) => p.categories.includes(activeCategory));
 
   function openProject(project: Project) {
     setSelected(project);
@@ -54,22 +39,8 @@ export function ProjectGallery() {
 
   return (
     <div>
-      <div className="flex flex-wrap gap-2">
-        {categories.map((category) => (
-          <Button
-            key={category}
-            size="sm"
-            variant={activeCategory === category ? "default" : "outline"}
-            onClick={() => setActiveCategory(category)}
-            className={cn("rounded-full")}
-          >
-            {category}
-          </Button>
-        ))}
-      </div>
-
       <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-        {filtered.map((project, i) => (
+        {allProjects.map((project, i) => (
           <ProjectCard
             key={project.slug}
             project={project}

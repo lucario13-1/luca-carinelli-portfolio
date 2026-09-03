@@ -59,11 +59,31 @@ export function ProjectModal({
           </div>
 
           <Tabs defaultValue="overview" className="mt-7">
-            <TabsList className="h-auto w-full flex-wrap justify-start gap-1 bg-transparent p-0">
-              <TabsTrigger value="overview" className="flex-none px-3 py-1.5">Overview</TabsTrigger>
-              <TabsTrigger value="process" className="flex-none px-3 py-1.5">Process & Analysis</TabsTrigger>
-              <TabsTrigger value="gallery" className="flex-none px-3 py-1.5">Gallery</TabsTrigger>
-              <TabsTrigger value="results" className="flex-none px-3 py-1.5">Results & Downloads</TabsTrigger>
+            <TabsList className="h-auto w-full flex-wrap justify-start gap-2 bg-transparent p-0">
+              <TabsTrigger
+                value="overview"
+                className="flex-none rounded-full border border-border bg-muted/60 px-3 py-1.5 text-foreground/70 data-active:border-transparent data-active:bg-brand data-active:text-brand-foreground"
+              >
+                Overview
+              </TabsTrigger>
+              <TabsTrigger
+                value="process"
+                className="flex-none rounded-full border border-border bg-muted/60 px-3 py-1.5 text-foreground/70 data-active:border-transparent data-active:bg-brand data-active:text-brand-foreground"
+              >
+                Process & Analysis
+              </TabsTrigger>
+              <TabsTrigger
+                value="gallery"
+                className="flex-none rounded-full border border-border bg-muted/60 px-3 py-1.5 text-foreground/70 data-active:border-transparent data-active:bg-brand data-active:text-brand-foreground"
+              >
+                Gallery
+              </TabsTrigger>
+              <TabsTrigger
+                value="results"
+                className="flex-none rounded-full border border-border bg-muted/60 px-3 py-1.5 text-foreground/70 data-active:border-transparent data-active:bg-brand data-active:text-brand-foreground"
+              >
+                Results & Downloads
+              </TabsTrigger>
             </TabsList>
 
             <TabsContent value="overview" className="mt-6 space-y-6">
