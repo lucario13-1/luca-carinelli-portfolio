@@ -89,7 +89,7 @@ export const site = {
     { label: "Thermal systems", icon: "Thermometer" },
     { label: "Drones", icon: "Bot" },
     { label: "Robotics", icon: "Cpu" },
-    { label: "Energy", icon: "Zap" },
+    { label: "Energy & Infrastructure Projects", icon: "Zap" },
     { label: "Product development", icon: "Wrench" },
   ],
 
