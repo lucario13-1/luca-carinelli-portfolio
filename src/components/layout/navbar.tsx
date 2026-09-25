@@ -51,6 +51,7 @@ export function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
+                prefetch={false}
                 className={cn(
                   "rounded-full px-3.5 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground",
                   isActive && "text-foreground"
@@ -95,6 +96,7 @@ export function Navbar() {
                     render={
                       <Link
                         href={item.href}
+                        prefetch={false}
                         className={cn(
                           "rounded-md px-3 py-2.5 text-base font-medium text-muted-foreground hover:bg-muted hover:text-foreground",
                           pathname === item.href && "bg-muted text-foreground"

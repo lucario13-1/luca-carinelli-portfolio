@@ -19,7 +19,12 @@ export function Footer() {
 
         <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
           {site.nav.slice(1).map((item) => (
-            <Link key={item.href} href={item.href} className="hover:text-foreground">
+            <Link
+              key={item.href}
+              href={item.href}
+              prefetch={false}
+              className="hover:text-foreground"
+            >
               {item.label}
             </Link>
           ))}
